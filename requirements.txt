@@ -3,3 +3,4 @@ gunicorn
 python-decouple
 PyMySQL
 djangorestframework
+djangorestframework-simplejwt
