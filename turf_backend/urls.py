@@ -15,11 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.http import JsonResponse
+from django.urls import path
+
+def health(request):
+    return JsonResponse({"status": "ok", "message": "Backend is running"})
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('core/', include('core.urls')),
-
-
+    path("", health),         
+    path("admin/", admin.site.urls),
 ]
+
