@@ -1,5 +1,4 @@
 Django>=4.2
 gunicorn
-python-dotenv
 python-decouple
-mysqlclient
+PyMySQL
