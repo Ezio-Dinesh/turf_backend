@@ -26,6 +26,13 @@ ALLOWED_HOSTS = ["*"]
 
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://adugalam.com",
+    "https://www.adugalam.com",
+    "https://api.adugalam.com",
+]
+
+
 
 
 # Application definition
@@ -39,8 +46,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'core',
+    "corsheaders"
 ]
-
+CORS_ALLOWED_ORIGINS = [
+    "https://adugalam.com",
+    "https://www.adugalam.com",
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
 ]
 
 
